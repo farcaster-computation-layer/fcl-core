@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/fcl-core/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/fcl-core/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/fcl-core",
+  "projects": {
+    "fcl-core": {
+      "type": "application",
+      "root": "apps/fcl-core",
+      "entryFile": "main",
+      "sourceRoot": "apps/fcl-core/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/fcl-core/tsconfig.app.json"
+      }
+    },
+    "mv-sublayer": {
+      "type": "application",
+      "root": "apps/mv-sublayer",
+      "entryFile": "main",
+      "sourceRoot": "apps/mv-sublayer/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/mv-sublayer/tsconfig.app.json"
+      }
+    },
+    "indexing-sublayer": {
+      "type": "application",
+      "root": "apps/indexing-sublayer",
+      "entryFile": "main",
+      "sourceRoot": "apps/indexing-sublayer/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/indexing-sublayer/tsconfig.app.json"
+      }
+    },
+    "filtering-sublayer": {
+      "type": "application",
+      "root": "apps/filtering-sublayer",
+      "entryFile": "main",
+      "sourceRoot": "apps/filtering-sublayer/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/filtering-sublayer/tsconfig.app.json"
+      }
+    }
+  }
+}

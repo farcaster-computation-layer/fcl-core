@@ -1,0 +1,46 @@
+{
+  "family": "degenpad-dcl-server-task",
+  "taskRoleArn": "arn:aws:iam::898329626477:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::898329626477:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "1024",
+  "memory": "2048",
+  "containerDefinitions": [
+    {
+      "name": "degenpad-dcl-server",
+      "image": "898329626477.dkr.ecr.ap-northeast-2.amazonaws.com/degenpad-dcl-server/main",
+      "cpu": 0,
+      "memory": null,
+      "memoryReservation": 1534,
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "hostPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "ulimits": [
+        {
+          "softLimit": 65535,
+          "hardLimit": 65535,
+          "name": "nofile"
+        }
+      ],
+      "environment": [],
+      "secrets": [
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/degenpad-dcl-server",
+          "awslogs-region": "ap-northeast-2",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}
